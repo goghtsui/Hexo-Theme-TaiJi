@@ -207,12 +207,57 @@ define([], function(){
             })
         }()
     }
+	
+	//
+	var Blog = {
+		reward: (function(){
 
+            var reward = d.getElementById('reward');
+            var rewardBtn = d.getElementById('rewardBtn');
+            var rewardOff = d.getElementById('rewardOff');
+
+            if(!reward) {
+                return;
+            }
+
+            function show(){
+                mask.classList.add('in');
+                reward.classList.add('ready');
+                setTimeout(function(){
+                    reward.classList.add('in');
+                    d.addEventListener(even, hideByBody);
+                }, 0) 
+            }
+
+            function hide(){
+                mask.classList.remove('in');
+                reward.classList.remove('in');
+                setTimeout(function(){
+                    reward.classList.remove('ready');
+                    d.removeEventListener(even, hideByBody);
+                }, 300)
+            }
+
+            function hideByBody(e){
+                if(!reward.contains(e.target)) {
+                    hide();
+                }
+            }
+
+            rewardBtn.addEventListener(even, function(){
+                return reward.classList.contains('in') ? hide() : show();
+            });
+            rewardOff.addEventListener(even, hide);
+
+        })()
+	}
+	
     return {
         init: function(){
             resetTags();
             bind();
             Tips.init();
+			Blog.reward();
         }
     }
 });

@@ -3,7 +3,7 @@
 </a>
 
 <% if ((is_home() || (is_post() && !theme.preload_comment)) && theme.show_count && (theme.disqus.on || theme.duoshuo.on || config.disqus_shortname)) { %> 
-    <a href="<%- url_for(post.path) %>#comments" title="<%= __('tooltip.jump2comments') %>">
+    <a href="<%- url_for(post.path) %>#comments" title="<%= __('查看评论') %>">
         <i class="fa fa-comments-o" aria-hidden="true"></i>
         <span class="count-comment"></span>
         <% if (theme.duoshuo.on) { %>

@@ -5,37 +5,39 @@
                 <i class="fa fa-copyright"></i> <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="<%= __('tooltip.Hexo') %>">HEXO</a>  Theme <a href="https://github.com/chen-shang" target="_blank" title="<%= __('tooltip.Yelee') %>">TaiJi</a> by 陈尚 <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="<%= __('Hexo官网') %>">HEXO</a>  Theme <a href="https://github.com/chen-shang" target="_blank" title="<%= __('Hexo主题') %>">TaiJi</a> Blogger 高晓峰 <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         <% if (theme.visit_counter.on) { %>
+			<!-- 不算子统计 -->
             <div class="visit">
                 <% if (theme.visit_counter.site_visit) { %>
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" ><%= __('visit_counter.site') %>: 
-                            <span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
+					<span id="busuanzi_container_site_pv" >
+						<font color="#999999" size="3" >本站访问量</font >
+						<u><font color="#ff6600" size="4" ><span id="busuanzi_value_site_pv"></span></font ></u>
+						<font color="#999999" size="3" >次</font >
+					</span>
                 <% } %>
                 <% if (theme.visit_counter.site_visit && theme.visit_counter.page_visit) { %>
-                    <span>, </span>
+                    <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
                 <% } %>
                 <% if (theme.visit_counter.page_visit) { %>
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"><%= __('visit_counter.page') %>: 
-                            <span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
+					<span id="busuanzi_container_site_uv">
+						<font color="#999999" size="3" >您是第</font >
+						<u><font color="#ff6600" size="4" > <span id="busuanzi_value_site_uv"></span></font ></u>
+						<font color="#999999" size="3" >位.</font >
+					</span>
                 <% } %>
             </div>
         <% } %>
     </div>
 <hr/>
-<i class="fa fa-microphone" styel="color:red">　<%=theme.say %></i>
-<!-- <i class="fa fa-circle-o-notch fa-spin"></i>
+<!-- <i class="fa fa-microphone" styel="color:red">　<%=theme.say %></i>
+<i class="fa fa-circle-o-notch fa-spin"></i>
 <i class="fa fa-cog fa-spin"></i>
 <i class="fa fa-refresh fa-spin"></i>
 <i class="fa fa-spinner fa-pulse"></i>
 <i class="fa fa-spinner fa-spin"></i>
 -->
+<%- partial('_partial/comments/user_statistics') %>
 </footer>

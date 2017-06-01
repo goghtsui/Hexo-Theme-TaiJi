@@ -7,17 +7,17 @@ TaiJi: "3.5"
 ## About Page: `hexo new page about`
 ## Tags Cloud Page: `hexo new page tags`
 menu:
-  我的主页: /
-  我的文章: /archives/
-  我的标签: /tags/
-  我的相册: /photos/
-  LOOK AT ME: /about/
+  主 页: /
+  文 章: /archives/
+  标 签: /tags/
+  相 册: /photos/
+  关 于: /about/
 
 # Link to your avatar | 填写头像地址
-avatar: /img/avatar3.png
+avatar: /img/logo_new.png 
 
 # Small icon of Your site | 站点小图标地址
-favicon:
+favicon: /img/favicon.ico
 
 # Internationalization | 主题语言
 ## Change Language in SITE's _config.yml | 在站点配置中切换语言
@@ -31,7 +31,7 @@ favicon:
 root_url: 
 
 # Year of Site Creation | 网站成立年份
-since: 2016
+since: 2015
 
 # Social info. Bar | 社交信息展示
 ## Keep "mailto:" in Email | 设置 Email 时保留 "mailto:"
@@ -57,25 +57,33 @@ show_count: true
 ## Add comment count after article title
 
 disqus: 
-  #on: true
-  shortname: 
+  on: true
+  shortname: xiaofeng355
   # https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
   # It is unnecessary to enable disqus here if 
   # you have set "disqus_shortname" in your site's "_config.yml" 
 
 duoshuo: 
-  #on: true
+  on: false
   domain: 
   # 是否开启多说评论，http://duoshuo.com/create-site/
   # 使用上面网址登陆你的多说，然后创建站点，在 domain 中填入你设定的域名前半部分
   # http://<要填的部分>.duoshuo.com (domain只填上<>里的内容，不要填整个网址)
 
 youyan:
-  on: true
+  on: false
   id: 
   # 是否开启友言评论，http://www.uyan.cc/index.php
   # id 中填写你的友言用户数字ID，注册后进入后台管理即可查看
   # 友言服务在 Web 环境下运行，普通本地环境无法查看，请部署后在线上测试。
+
+#是否开启打赏，关闭 reward: false
+reward:
+  title: 谢谢大爷~
+  #微信，关闭设为 false
+  wechat: /img/wechat.png
+  #支付宝，关闭设为 false
+  alipay: /img/alipay.png
 
 
 # >>> Style Customisation 样式自定义 <<<
@@ -86,33 +94,37 @@ youyan:
 ## "0": white-gray background | 淳朴灰白背景
 background_image: 5
 
-# Base Font Size | 字号调节
-base_font_size: 16  #px, 16 - 24
+# Base Font Size | 字号调节 | #px, 16 - 24
+base_font_size: 18  
 
 ## General Color Scheme | 主题配色方案 
 ## 可用值 Value: yilia
 color_scheme: yilia
 
+# inline_code : 0 - 9 可选
+# code_block : 0 - 4 
 highlight_style:
   on: true
-  inline_code: 2 # Value: 0 - 9 可选
-  code_block: 2  # Value: 0 - 4 
+  inline_code: 2 
+  code_block: 2  
   # Set inline_code to style highlight text
   # Chose a highlight theme for code block
   # 通过 inline_code 切换内置文本高亮样式
   # 通过 code_block 切换内置代码高亮配色主题
 
+
+# blockquote : 0 - 7 可选
 blockquote_style:
   on: true
-  blockquote: 4  # Value: 0 - 7 可选
+  blockquote: 4  
   # 自定义文章「引用部分」的样式
 
 # Headings Style | 标题风格
-## 0-Yelee, 1-Yilia, 2-GitHub
-heading_style: 0 # Value: 0 - 2
+## 0 - 2 ： 0-Yelee, 1-Yilia, 2-GitHub
+heading_style: 0 
 
-## List style type (ul) | 无序列表项标记样式
-list_style: 0  # value: 0 - 12 可选
+## List style type (ul) | 无序列表项标记样式 | 0 - 12 可选
+list_style: 0
 
 # 左边栏宽度 px
 left_col_width: 355
@@ -123,9 +135,12 @@ copyright: false
 # Table of contents | 文章目录
 toc:
   on: true
-  list_number: true # 目录序号
-  max_depth: 6  # 1 - 6 (h1-h6) 目录最大级数
-  nowrap: false # Keep title on same line | 目录标题不换行
+  # 目录序号
+  list_number: true 
+  # 1 - 6 (h1-h6) 目录最大级数
+  max_depth: 6  
+  # Keep title on same line | 目录标题不换行
+  nowrap: false 
 
 # 是否开启主页及加载头像时的动画效果
 # Animation in Homepage and Loading avatar
@@ -133,12 +148,13 @@ animate: true
 
 # Load jQuery UI to style tooltips
 # 工具提示框样式美化
-jquery_ui: false
+jquery_ui: true
 
 # Max width of right cloumn | 限制右侧内容的宽带
 limit_article_width:
    on: false
-   max_width: 60 # em
+   # em
+   max_width: 60 
 
 # >>> Small features | 小功能设置 <<<
 
@@ -147,47 +163,58 @@ limit_article_width:
 tagcloud: true
 
 # Blogroll, Link exchange | 友情链接
-friends:
-  Hexo: https://hexo.io
-  GitHub: https://pages.github.com/
-  旧博客地址: http://chenshang.ueuo.com
-#friends: false
+#friends:
+#  Hexo: https://hexo.io
+#  GitHub: https://pages.github.com/
+# 旧博客地址: http://chenshang.ueuo.com
+friends: false
 
 #是否开启“关于我”。
-aboutme: 1. 擅长Ai、Fw、Br、Ae、Pr、Id、Ps等软件的安装与卸载。------------------ 2. 精通CSS、JavaScript、PHP、C、C++、C#、Java、Ruby、Perl、Lisp、Python、Objective-C、ActionScript等单词的拼写。------------------------ 3. 熟悉Windows、Linux、MacOS、IOS、Android等系统的开关机。
-#aboutme: false
+#aboutme: 1. Android 
+aboutme: false
 
 # 是否在新窗口打开链接
 # Open ALL link in a new tab
 open_in_new:
-  global: 0 # 0-2
-  title: false # article title in homepage 主页文章标题
-  post: false # link within post/page 正文中的链接
-  tags: false # 标签
-  categories: false # 分类
-  article_nav: false # 导航
-  archives: true # 归档
-  mini_archives: true # 迷你归档
-  menu: false # 边栏菜单
-  friends: true  # 友情链接
-  socail: true # 社交图标
+  # 0-2
+  global: 0 
+  # article title in homepage 主页文章标题
+  title: false 
+  # link within post/page 正文中的链接
+  post: false 
+  # 标签
+  tags: false 
+  # 分类
+  categories: false 
+  # 导航
+  article_nav: false 
+  # 归档
+  archives: true 
+  # 迷你归档
+  mini_archives: true 
+  # 边栏菜单
+  menu: false 
+  # 友情链接
+  friends: true  
+  # 社交图标
+  socail: true 
 
 # Customize feed link 自定义订阅地址
 rss: /atom.xml
 
-#eminder for IE6/7/8
 # 针对 IE6/7/8 的升级浏览器提示
 ie_updater:
-   on: true
-   link: //outdatedbrowser.com/
-   ## http://browsehappy.com/
-   ## http://outdatedbrowser.com/
+  on: true
+  ## http://browsehappy.com/
+  ## http://outdatedbrowser.com/
+  link: //outdatedbrowser.com/
 
+  
 # Tab Title Change | 标签页标题切换
 tab_title_change:
-  on: false
-  left_tab_title: '(つェ⊂) 我藏好了哦~ '
-  return_tab_title: '(*´∇｀*) 被你发现啦~ '
+  on: true
+  left_tab_title: '我在等你呦'
+  return_tab_title: '(*>_<*)晓峰博客'
 
 # >>> Vendors | 第三方工具 & 服务 <<<
 
@@ -206,28 +233,28 @@ fancybox: true
 
 # Display Math(LaTeX, MathML...) | 数学公式支持
 ## https://www.mathjax.org/
-mathjax: false
+mathjax: true
 
 # Socail Share | 是否开启分享
 share: 
   on: true
   baidu: true
-  addthis: false
-  addthis_pubid: "ra-56ff76c972fc0cf9"
+  addthis: true
+  addthis_pubid: "ra-59294e6bcae8f568"
   ## Go to www.addthis.com/dashboard to get your pubid (in src of Code)
   ## and customize AddThis share buttons
 
 # 百度、谷歌站长验证。填写 HTML 标签 content
-# Site Verification for Google and Baidu. HTML label content.
-baidu_site: 
-google_site: 
+# Site Verification for Google and Baidu. HTML label content. hg1tugxzZf / google-site-verification: googlea507cc85570ed219.html
+baidu_site: hg1tugxzZf
+google_site:
 
 # Fill in Google Analytics tracking ID, #e.g. UA-XXXXX-X
-google_analytics: 
+google_analytics: UA-70168817-1
 
 # 百度统计 http://sitecenter.baidu.com/sc-web/
 # 查看代码，填入 //hm.baidu.com/hm.js? 之后的内容
-baidu_tongji: 3eac40af253e9594e1beb2e448d03eef 
+baidu_tongji: a76cfedb91334def30cb7ff4264b0c18
 
 # 不蒜子网站计数设置
 # http://ibruce.info/2015/04/04/busuanzi/
@@ -247,8 +274,9 @@ github_widget: true
 #       loading-bar|mac-osx|minimal
 # color: black|blue|green|orange|pink|purple|red|silver|white|yellow|
 progressBar:
-  on: false
-  type: "minimal"  # Keep Quotes | 保留引号避免出错
+  on: true
+  # Keep Quotes | 保留引号避免出错
+  type: "bounce"  
   color: silver
 
 CDN:

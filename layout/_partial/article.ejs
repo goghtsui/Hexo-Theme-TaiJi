@@ -45,13 +45,49 @@
       <%- partial('post/tag') %>
       <% if (index && (post.description || post.excerpt)){ %>
         <p class="article-more-link">
-          <a href="<%- url_for(post.path) %>#more"><%= __('index.more') %> >></a>
+          <a href="<%- url_for(post.path) %>#more"><%= __('阅读全文') %> >></a>
         </p>
       <% } %>
       <div class="clearfix"></div>
     </div>
     <% } %>
   </div>
+  
+  <%- partial('post/reward') %>
+
+  <br/>
+  <% if(theme.reward){ %>
+    <div class="post-reward">
+	  
+      <ul class="reward-items">
+        <% if(theme.reward.wechat){ %>
+        <li>
+            <img src="<%=theme.reward.wechat %>" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        <% } %>
+		
+		<li>
+			<a id="rewardBtn" href="javascript:;" class="post-reward-btn waves-effect waves-circle waves-light"> 赏 </a>
+		</li>
+		
+        <% if(theme.reward.alipay){ %>
+        <li>
+            <img src="<%=theme.reward.alipay %>" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        <% } %>
+    </ul>
+	</div>
+  <% } %>
+  
+  <hr>
+  <div class="footer-right" style="margin-left:5%">
+	<% if (!index){ %>
+		<%- partial('comments/custom_statement') %>
+    <% } %>
+  </div>
+  
   <% if (!index){ %>
     <%- partial('post/nav') %>
   <% } %>
